@@ -1,0 +1,317 @@
+.App {
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+  /* Ajout d'une position relative */
+  min-height: 100vh;
+  /* Assurez-vous qu'il est au moins aussi haut que la fenêtre de visualisation */
+  padding-bottom: 90px;
+  /* Ajoutez un padding en bas pour le footer */
+}
+
+.church-filter-container {
+  position: absolute;
+  /* Position absolue pour le conteneur du filtre */
+  top: 0;
+  /* Positionnement en haut */
+  right: 0;
+  /* Positionnement à droite */
+  ;
+  margin-top: 20px;
+  /* Espacement du haut */
+  margin-right: 20px;
+  /* Espacement de la droite */
+}
+
+#churchFilter {
+  margin-bottom: 20px;
+  /* Ajout de marge en bas */
+}
+
+.messages {
+  display: flex;
+  flex-wrap: wrap;
+  /* Permettre aux messages de s'enrouler sur plusieurs lignes */
+  justify-content: center;
+  /* Centrer les messages horizontalement */
+}
+
+.message {
+  background-color: #f1e8e8;
+  padding: 10px;
+  margin: 10px;
+  /* Ajout de marge entre les messages */
+  border-radius: 10px;
+  width: 300px;
+  /* Définition d'une largeur fixe pour chaque message */
+}
+
+.date {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.comment-container {
+  max-height: 200px;
+  /* Ajout de hauteur maximale pour la zone de commentaires */
+  overflow-y: auto;
+  /* Activation du défilement vertical si nécessaire */
+  margin-top: 10px;
+  /* Espacement supplémentaire en haut */
+}
+
+button {
+  background-color: #007bff;
+  /* Couleur de fond */
+  color: white;
+  /* Couleur du texte */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* Transition pour l'effet de survol */
+}
+
+button:hover {
+  background-color: #0056b3;
+  /* Couleur de fond au survol */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* Empile les éléments du formulaire verticalement */
+  align-items: center;
+  /* Centre les éléments sur l'axe transversal */
+  gap: 10px;
+  /* Ajoute un espace entre les éléments du formulaire */
+}
+
+input[type="text"] {
+  width: 90%;
+  /* Donne une largeur fixe aux champs de texte */
+  margin: 5px;
+  /* Ajoute un peu d'espace autour des champs de texte */
+}
+
+input[name="pseudo"],
+input[name="church"] {
+  width: calc(45% - 10px);
+  /* Ajuste la largeur pour tenir compte de la marge */
+}
+
+button {
+  width: 90%;
+  /* Assure que le bouton est aussi large que les champs de texte */
+  padding: 10px;
+  /* Ajoute un peu de padding pour le confort visuel */
+}
+
+@media (min-width: 768px) {
+
+  /* Pour les écrans plus grands, adapte le style */
+  input[name="pseudo"],
+  input[name="church"] {
+    width: calc(22.5% - 10px);
+    /* Ajuste la largeur pour les écrans plus grands */
+  }
+}
+
+/* Reste du CSS... */
+
+.form-container {
+  max-width: 500px;
+  /* Limite la largeur du formulaire */
+  margin: auto;
+  /* Centrage du formulaire */
+  background-color: #f7f7f7;
+  /* Couleur de fond pour le conteneur du formulaire */
+  padding: 20px;
+  /* Espacement à l'intérieur du conteneur du formulaire */
+  border-radius: 10px;
+  /* Arrondit les coins du conteneur du formulaire */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* Empile les éléments du formulaire verticalement */
+  gap: 10px;
+  /* Ajoute un espace entre les éléments du formulaire */
+}
+
+input[type="text"],
+button {
+  width: 100%;
+  /* Les champs et le bouton prennent toute la largeur */
+  padding: 10px;
+  /* Ajoute un peu de padding pour le confort visuel */
+  margin-bottom: 10px;
+  /* Espacement en dessous de chaque champ */
+  border: 1px solid #ccc;
+  /* Bordure pour les champs */
+  border-radius: 15px;
+  /* Arrondit les coins des champs */
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  /* Sépare les champs de manière égale */
+}
+
+.input-row>input {
+  width: 48%;
+  /* Chaque champ prend presque la moitié de l'espace disponible */
+}
+
+/* Média queries et autres styles... */
+.message-container {
+  margin-bottom: 20px;
+  /* Espace entre les messages */
+}
+
+.message-container {
+  margin-bottom: 20px;
+}
+
+.message-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  /* largeur fixe */
+  height: auto;
+  /* hauteur automatique en fonction du contenu */
+  overflow: hidden;
+  /* cache le contenu qui dépasse */
+}
+
+
+.message-container.active .comments-panel {
+  max-height: 500px;
+  /* suffisamment grande pour le contenu */
+  overflow-y: auto;
+}
+
+/* Styles pour le titre h1 */
+h1 {
+  font-family: Chalkduster, fantasy;
+  /* Remplacez par la police de votre choix */
+  color: #5a5a5a;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+/* Styles pour le conteneur de filtre */
+.church-filter-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#churchFilter {
+  border: 2px solid #5a5a5a;
+  border-radius: 0.25rem;
+  padding: 10px;
+  font-size: 1rem;
+  margin-left: 10px;
+  /* Pour un peu d'espacement après le label */
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #5a5a5a;
+}
+
+/* Styles existants pour les écrans plus grands */
+
+/* ... */
+
+/* Media query pour les écrans jusqu'à 375px de large */
+@media (max-width: 460px) {
+  .church-filter-container {
+    position: static;
+    /* ou `relative` au lieu de `absolute` pour ne pas le superposer */
+    width: 100%;
+    /* prenez la pleine largeur pour éviter la surcharge */
+    margin-top: 1rem;
+    /* donnez un peu d'espace en dessus */
+    order: 2;
+    /* Si vous utilisez flexbox, ordonnez-le après le titre */
+  }
+
+  h1 {
+    order: 1;
+    /* Si vous utilisez flexbox, ordonnez-le avant le filtre */
+    margin-bottom: 0.5rem;
+    /* Réduisez la marge en dessous du titre */
+  }
+
+  #churchFilter {
+    width: auto;
+    /* ou une largeur spécifique plus petite que 100% si vous le souhaitez */
+    max-width: 300px;
+    /* pour limiter la largeur maximale du `select` */
+  }
+
+  /* Ajustez les tailles de police si nécessaire pour les petits écrans */
+  h1 {
+    font-size: 1.5rem;
+    /* ajustez la taille de la police du titre */
+  }
+
+  label {
+    font-size: 0.9rem;
+    /* ajustez la taille de la police du label */
+  }
+
+  select {
+    font-size: 0.8rem;
+    /* ajustez la taille de la police du select */
+  }
+}
+/* Style pour le footer */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f8f9fa;
+  position: fixed;
+  /* Gardez-le fixé en bas */
+  bottom: 0;
+  width: 100%;
+  /* Retirez la marge du haut si vous utilisez padding-bottom dans .App */
+}
+.footer p {
+  color: #333;
+  font-size: 0.8em;
+  /* Adaptez la taille selon vos besoins */
+}
+
+/*une belle personnalisation de la balise H4 mettre surbrillance sur le texte avec une belle police */
+h4 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  h4 {
+    font-size: 1.1rem;
+  }
+}
